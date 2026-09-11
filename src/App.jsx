@@ -377,14 +377,14 @@ function App() {
             <div>
               <h4>Email</h4>
               <p>
-                
+                samirajagekar@gmail.com
               </p>
             </div>
 
             <div>
               <h4>Location</h4>
               <p>
-              KOlhapur, Maharashtra, India
+              Kolhapur, Maharashtra, India
               </p>
             </div>
 
