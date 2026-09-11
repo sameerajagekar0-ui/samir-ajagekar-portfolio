@@ -83,10 +83,9 @@ function App() {
 
           <h1>Samir Ajagekar</h1>
 
-          <h2>
-            Aspiring <span>Software Engineer</span>
+         <h2>
+            Aspiring <span className="typewriter-loop">Software Engineer</span>
           </h2>
-
           <p className="hero-description">
             Python | Java | SQL | AI/ML | Web Development | RAG
           </p>
