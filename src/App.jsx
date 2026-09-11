@@ -1,24 +1,43 @@
 import React from "react";
 import "./App.css";
-
+import {
+  FaPython,
+  FaJava,
+  FaDatabase,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaGitAlt,
+  FaGithub,
+  FaLink,
+  FaBrain,
+  FaRobot,
+  FaLinkedin,
+  FaEnvelope
+} from "react-icons/fa";
+import { 
+  SiC, 
+  SiJavascript, 
+  SiFastapi, 
+  SiMysql 
+} from "react-icons/si";
 const skills = [
-  "Python",
-  "Java",
-  "C",
-  "SQL",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "FastAPI",
-  "MySQL",
-  "LangChain",
-  "RAG",
-  "AI/ML",
-  "Git",
-  "GitHub",
+  { name: "Python", icon: <FaPython color="#3776AB" /> },
+  { name: "Java", icon: <FaJava color="#007396" /> },
+  { name: "C", icon: <SiC color="#A8B9CC" /> },
+  { name: "SQL", icon: <FaDatabase color="#336791" /> },
+  { name: "HTML", icon: <FaHtml5 color="#E34F26" /> },
+  { name: "CSS", icon: <FaCss3Alt color="#1572B6" /> },
+  { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" /> },
+  { name: "React", icon: <FaReact color="#61DAFB" /> },
+  { name: "FastAPI", icon: <SiFastapi color="#009688" /> },
+  { name: "MySQL", icon: <SiMysql color="#4479A1" /> },
+  { name: "LangChain", icon: <FaLink color="#333333" /> }, 
+  { name: "RAG", icon: <FaBrain color="#ff4d5a" /> },
+  { name: "AI/ML", icon: <FaRobot color="#ff4d5a" /> },
+  { name: "Git", icon: <FaGitAlt color="#F05032" /> },
+  { name: "GitHub", icon: <FaGithub color="#181717" /> },
 ];
-
 const projects = [
   {
     title: "Text-to-SQL RAG Chatbot",
@@ -200,10 +219,9 @@ function App() {
           {skills.map((skill, index) => (
             <div className="skill-card" key={index}>
               <div className="skill-icon">
-                {skill.substring(0, 1)}
+                <span className="skill-symbol">{skill.icon}</span>
               </div>
-
-              <h3>{skill}</h3>
+              <h3>{skill.name}</h3>
             </div>
           ))}
         </div>
@@ -359,46 +377,56 @@ function App() {
             <div>
               <h4>Email</h4>
               <p>
-                Add your email here
+                
               </p>
             </div>
 
             <div>
               <h4>Location</h4>
               <p>
-                Ajra, Maharashtra, India
+              KOlhapur, Maharashtra, India
               </p>
             </div>
 
             <div>
               <h4>LinkedIn</h4>
-
-              <a
-                href="https://www.linkedin.com/in/samir-ajagekar-999626319/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                linkedin.com/in/samir-ajagekar-999626319
-              </a>
+<a
+            href="https://www.linkedin.com/in/samir-ajagekar-999626319/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedin /> LinkedIn
+          </a>
+              
             </div>
 
           </div>
 
-          <form className="contact-form">
+          <form 
+            className="contact-form" 
+            action="https://formspree.io/f/myeyvbng" 
+            method="POST"
+          >
 
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
+              required
             />
 
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
+              required
             />
 
             <textarea
+              name="message"
               rows="6"
               placeholder="Your Message"
+              required
             ></textarea>
 
             <button type="submit">
@@ -406,7 +434,6 @@ function App() {
             </button>
 
           </form>
-
         </div>
       </section>
 
