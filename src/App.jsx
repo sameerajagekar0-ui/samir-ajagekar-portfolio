@@ -453,9 +453,8 @@ function App() {
           >
             LinkedIn
           </a>
-
           <a
-            href="https://github.com/"
+            href="https://github.com/sameerajagekar0-ui"
             target="_blank"
             rel="noreferrer"
           >
