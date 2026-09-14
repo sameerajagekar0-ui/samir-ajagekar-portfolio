@@ -412,15 +412,41 @@ a {
 } 
 
 /* =========================================
-   SKILLS CARDS
+   SKILLS CARDS (Marquee Scrolling + 3D Spin)
    ========================================= */
-.skills-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
-  gap: 25px; 
-} 
+.skills-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0; /* Prevents box-shadows from clipping */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.skills-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 35s linear infinite;
+}
+
+/* Pauses the scrolling and the 3D spinning on hover */
+.skills-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.skills-group {
+  display: flex;
+  gap: 25px;
+  padding-right: 25px; 
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
 
 .skill-card { 
+  width: 160px; /* NEW: Fixed width prevents cards from squishing */
+  flex-shrink: 0; /* NEW: Forces cards to stay exact size in the track */
   border: 1px solid rgba(0,0,0,0.04); 
   border-radius: 16px;
   padding: 35px 20px; 
@@ -440,27 +466,27 @@ a {
   height: 65px; 
   margin: auto auto 20px; 
   border-radius: 16px; 
-  background: rgba(255, 77, 90, 0.1); 
-  color: var(--primary); 
+  /* Using a softer background so the official brand colors can pop if desired */
+  background: rgba(0, 0, 0, 0.03); 
   display: flex; 
   justify-content: center; 
   align-items: center; 
   font-weight: 700; 
-  font-size: 28px; 
+  font-size: 35px; /* Increased slightly for React Icons */
   transition: var(--transition-bounce);
-  transform-style: preserve-3d; /* NEW: Needed for 3D spin inside */
+  transform-style: preserve-3d; /* Needed for 3D spin inside */
 } 
 
-/* NEW: The spinning symbol inside the icon box */
+/* The spinning symbol inside the icon box */
 .skill-symbol {
   display: inline-block;
   animation: spinYAxis 4s linear infinite;
 }
 
-/* MODIFIED: Stop spin on hover and soften the box background so it doesn't clash */
+/* Stop spin on hover */
 .skill-card:hover .skill-symbol {
   animation-play-state: paused;
-  color: var(--primary);
+  color: var(--primary); /* Overrides brand color to pink on hover */
 }
 
 .skill-card:hover .skill-icon {
@@ -471,7 +497,7 @@ a {
 .skill-card h3 { 
   font-size: 17px; 
   font-weight: 600;
-} 
+}
 
 /* =========================================
    EXPERIENCE

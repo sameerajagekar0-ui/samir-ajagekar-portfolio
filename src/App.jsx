@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./App.css";
 import {
   FaPython,
@@ -84,7 +85,7 @@ function App() {
           <h1>Samir Ajagekar</h1>
 
          <h2>
-            Aspiring <span className="typewriter-loop">Software Engineer</span>
+            Aspiring<span className="typewriter-loop">Software Engineer</span>
           </h2>
           <p className="hero-description">
             Python | Java | SQL | AI/ML | Web Development | RAG
@@ -203,7 +204,7 @@ function App() {
         </div>
       </section>
 
-      {/* SKILLS */}
+{/* SKILLS */}
       <section id="skills" className="section">
         <div className="section-title">
           <span>03</span>
@@ -214,18 +215,37 @@ function App() {
           Technologies and tools I work with
         </p>
 
-        <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <div className="skill-card" key={index}>
-              <div className="skill-icon">
-                <span className="skill-symbol">{skill.icon}</span>
-              </div>
-              <h3>{skill.name}</h3>
+        {/* NEW: Marquee Wrapper for smooth scrolling */}
+        <div className="skills-marquee-container">
+          <div className="skills-marquee-track">
+            
+            {/* First Set of Skills */}
+            <div className="skills-group">
+              {skills.map((skill, index) => (
+                <div className="skill-card" key={`skill-1-${index}`}>
+                  <div className="skill-icon">
+                    <span className="skill-symbol">{skill.icon}</span>
+                  </div>
+                  <h3>{skill.name}</h3>
+                </div>
+              ))}
             </div>
-          ))}
+
+            {/* Second Set of Skills (Duplicated for the infinite seamless loop) */}
+            <div className="skills-group">
+              {skills.map((skill, index) => (
+                <div className="skill-card" key={`skill-2-${index}`}>
+                  <div className="skill-icon">
+                    <span className="skill-symbol">{skill.icon}</span>
+                  </div>
+                  <h3>{skill.name}</h3>
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
       </section>
-
       {/* EXPERIENCE */}
       <section id="experience" className="section light-section">
         <div className="section-title">
