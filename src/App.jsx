@@ -14,6 +14,7 @@ import {
   FaBrain,
   FaRobot,
   FaLinkedin,
+  FaPhone,
   FaEnvelope
 } from "react-icons/fa";
 import { 
@@ -479,8 +480,11 @@ function App() {
           >
             GitHub
           </a>
-        </div>
-
+          {/* NEW: Clickable Mobile Number */}
+          <a href="tel:+910000000000">
+            <FaPhone /> +91 9307093751
+          </a>
+          </div>
         <p className="copyright">
           © 2026 Samir Ajagekar. All Rights Reserved.
         </p>
