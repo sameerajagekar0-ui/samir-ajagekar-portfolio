@@ -343,9 +343,10 @@ function App() {
         <div>
           <span>Achievement</span>
 
-          <h2>
+          <h2 className="Rank">
             🥇 First Rank – Py Battle
           </h2>
+
 
           <p>
             PRAGYAN 2K26 National Level Technical Event
@@ -382,7 +383,7 @@ function App() {
 
         <div className="section-title center">
           <span>07</span>
-          <h2>Get In Touch</h2>
+          <h2 className="G">Get In Touch</h2>
         </div>
 
         <p className="contact-intro">
@@ -459,7 +460,7 @@ function App() {
 
       {/* FOOTER */}
       <footer>
-        <h3>Samir Ajagekar</h3>
+        <h3 className="Fname">Samir Ajagekar</h3>
 
         <p>
           Aspiring Software Engineer | AI/ML | Web Development

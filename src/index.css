@@ -70,9 +70,20 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: hsl(128, 128, 128);
+  color: black;
 }
-
+h2.Rank{
+  color: white;
+}
+h2.achievement{
+  color: white;
+}
+h2.G{
+  color: #f3f4f6;
+}
+h2.Fname{
+  color: white;
+}
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
