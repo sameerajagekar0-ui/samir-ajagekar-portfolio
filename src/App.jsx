@@ -21,7 +21,8 @@ import {
   SiC, 
   SiJavascript, 
   SiFastapi, 
-  SiMysql 
+  SiMysql ,
+  SiN8N
 } from "react-icons/si";
 const skills = [
   { name: "Python", icon: <FaPython color="#3776AB" /> },
@@ -37,6 +38,7 @@ const skills = [
   { name: "LangChain", icon: <FaLink color="#333333" /> }, 
   { name: "RAG", icon: <FaBrain color="#ff4d5a" /> },
   { name: "AI/ML", icon: <FaRobot color="#ff4d5a" /> },
+  { name: "n8n", icon: <SiN8N color="#EA4B71" /> },
   { name: "Git", icon: <FaGitAlt color="#F05032" /> },
   { name: "GitHub", icon: <FaGithub color="#181717" /> },
 ];
