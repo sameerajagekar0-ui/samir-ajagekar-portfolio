@@ -225,6 +225,7 @@ a {
   display: flex; 
   gap: 20px; 
   margin-top: 35px; 
+  flex-wrap: wrap; /* Helps buttons stack nicely on very small mobile screens */
 } 
 
 .btn { 
@@ -237,6 +238,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px; /* NEW: Adds spacing between the icon and the text */
 } 
 
 .primary { 
@@ -264,6 +266,16 @@ a {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 } 
 
+/* NEW: Glowing Animation customized for your specific box-shadow */
+.glowing-btn {
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 4px 15px rgba(255, 77, 90, 0.3); } /* Starts at your default shadow */
+  70% { box-shadow: 0 0 0 15px rgba(255, 77, 90, 0); } /* Expands and fades out */
+  100% { box-shadow: 0 4px 15px rgba(255, 77, 90, 0.3); } /* Returns to default */
+}
 
 /* =========================================
    SECTIONS & TYPOGRAPHY
@@ -446,22 +458,26 @@ a {
 }
 
 .skill-card { 
-  width: 160px; /* NEW: Fixed width prevents cards from squishing */
-  flex-shrink: 0; /* NEW: Forces cards to stay exact size in the track */
-  border: 1px solid rgba(0,0,0,0.04); 
+  width: 160px; /* Keeps cards from squishing in the marquee */
+  flex-shrink: 0; 
   border-radius: 16px;
   padding: 35px 20px; 
   text-align: center; 
   background: var(--bg-white); 
   transition: var(--transition-bounce); 
+  
+  /* The magic: soft reddish glowing border and zero-offset shadow */
+  border: 2px solid rgba(255, 77, 90, 0.1); 
+  box-shadow: 0 0 20px rgba(255, 77, 90, 0.15); 
 } 
 
 .skill-card:hover { 
   transform: translateY(-10px); 
-  box-shadow: var(--shadow-md); 
-  border-color: rgba(255, 77, 90, 0.3);
-} 
-
+  
+  /* Intensifies the red glow on hover */
+  border: 2px solid rgba(255, 77, 90, 0.5); 
+  box-shadow: 0 0 30px rgba(255, 77, 90, 0.4); 
+}
 .skill-icon { 
   width: 65px; 
   height: 65px; 
@@ -858,3 +874,4 @@ footer p { color: #888; font-size: 15px; margin: 8px; }
     padding: 25px 20px;
   }
 }
+/* =========================================

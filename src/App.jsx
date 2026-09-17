@@ -69,18 +69,25 @@ const projects = [
 
 function App() {
   // Initialize AOS scroll animations
+const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "dark";
+  });
+
+  // 2. Update the body class and save to local storage whenever it changes
+// Initialize AOS scroll animations
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animations take 1 second
-      once: true,     // Animations only run once when scrolling down
-      offset: 100,    // Starts animation when element is 100px into view
+      duration: 1000, 
+      once: true,     
+      offset: 100,    
     });
   }, []);
-
   // ... rest of your code (titles array, etc.)
   return (
+    
     <div className="app">
-
+      
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="logo">Samir Ajagekar</div>
@@ -95,7 +102,6 @@ function App() {
           <a href="#contact">Contact</a>
         </div>
       </nav>
-
       {/* HERO */}
       <section id="home" className="hero">
         <div className="hero-content">
