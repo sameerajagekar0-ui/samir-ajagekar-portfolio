@@ -1,5 +1,7 @@
 import React from "react";
-
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Imports the animation styles
 import "./App.css";
 import {
   FaPython,
@@ -24,6 +26,8 @@ import {
   SiMysql ,
   SiN8N
 } from "react-icons/si";
+
+
 const skills = [
   { name: "Python", icon: <FaPython color="#3776AB" /> },
   { name: "Java", icon: <FaJava color="#007396" /> },
@@ -62,6 +66,16 @@ const projects = [
 ];
 
 function App() {
+  // Initialize AOS scroll animations
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animations take 1 second
+      once: true,     // Animations only run once when scrolling down
+      offset: 100,    // Starts animation when element is 100px into view
+    });
+  }, []);
+
+  // ... rest of your code (titles array, etc.)
   return (
     <div className="app">
 
@@ -117,21 +131,26 @@ function App() {
         </div>
       </section>
 
-      {/* ABOUT */}
+    {/* ABOUT */}
       <section id="about" className="section">
-        <div className="section-title">
+        
+        {/* Title floats up */}
+        <div className="section-title" data-aos="fade-up">
           <span>01</span>
           <h2>Who I am</h2>
         </div>
 
         <div className="about-grid">
-          <div className="about-image">
+          
+          {/* Image box slides in from the left */}
+          <div className="about-image" data-aos="fade-right">
             <div className="profile-placeholder">
               SA
             </div>
           </div>
 
-          <div className="about-text">
+          {/* Text slides in from the right */}
+          <div className="about-text" data-aos="fade-left">
             <h3>About Me</h3>
 
             <p>
@@ -142,7 +161,7 @@ function App() {
 
             <p>
               I completed my Diploma in Computer Engineering from MSBTE
-              with a grade of <strong>92.12</strong>.
+              with a grade of <strong>92.12%</strong>.
             </p>
 
             <p>
@@ -159,16 +178,19 @@ function App() {
         </div>
       </section>
 
-      {/* EDUCATION */}
+     {/* EDUCATION */}
       <section id="education" className="section light-section">
-        <div className="section-title">
+        
+        {/* Title floats up */}
+        <div className="section-title" data-aos="fade-up">
           <span>02</span>
           <h2>Education</h2>
         </div>
 
         <div className="timeline">
 
-          <div className="timeline-item">
+          {/* First card pops up quickly */}
+          <div className="timeline-item" data-aos="fade-up" data-aos-delay="100">
             <div className="timeline-dot"></div>
 
             <div className="timeline-content">
@@ -184,7 +206,8 @@ function App() {
             </div>
           </div>
 
-          <div className="timeline-item">
+          {/* Second card pops up slightly after the first one */}
+          <div className="timeline-item" data-aos="fade-up" data-aos-delay="300">
             <div className="timeline-dot"></div>
 
             <div className="timeline-content">
@@ -286,21 +309,29 @@ function App() {
         </div>
       </section>
 
-      {/* PROJECTS */}
+    {/* PROJECTS */}
       <section id="projects" className="section">
-        <div className="section-title">
+        
+        {/* Title floats up */}
+        <div className="section-title" data-aos="fade-up">
           <span>05</span>
           <h2>Projects</h2>
         </div>
 
-        <p className="section-subtitle">
+        {/* Subtitle floats up just after the title */}
+        <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
           Some of my recent work
         </p>
 
         <div className="projects-grid">
 
           {projects.map((project, index) => (
-            <div className="project-card" key={index}>
+            <div 
+              className="project-card" 
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 150} /* Automatically staggers the cards */
+            >
 
               <div className="project-number">
                 0{index + 1}
