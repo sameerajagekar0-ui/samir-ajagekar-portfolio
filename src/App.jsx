@@ -17,6 +17,8 @@ import {
   FaRobot,
   FaLinkedin,
   FaPhone,
+  FaDownload,
+  FaPaperPlane,
   FaEnvelope
 } from "react-icons/fa";
 import { 
@@ -114,20 +116,26 @@ function App() {
             problems through technology.
           </p>
 
-          <div className="hero-buttons">
-            <a href="#contact" className="btn primary">
-              Contact Me
-            </a>
+         
+       {/* HERO BUTTONS */}
+        <div className="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+          
+          <a 
+            href="/resume.pdf" 
+            download="Samir_Ajagekar_Resume.pdf" 
+            className="btn primary glowing-btn"
+          >
+            <FaDownload /> Download Resume
+          </a>
 
-            <a
-              href="https://www.linkedin.com/in/samir-ajagekar-999626319/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn secondary"
-            >
-              LinkedIn
-            </a>
-          </div>
+          <a 
+            href="#contact" 
+            className="btn secondary"
+          >
+            <FaPaperPlane /> Contact Me
+          </a>
+
+        </div>
         </div>
       </section>
 
