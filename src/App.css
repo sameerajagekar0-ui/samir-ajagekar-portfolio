@@ -438,7 +438,7 @@ a {
 .skills-marquee-track {
   display: flex;
   width: max-content;
-  animation: scrollMarquee 35s linear infinite;
+  animation: scrollMarquee 15s linear infinite;
 }
 
 /* Pauses the scrolling and the 3D spinning on hover */
@@ -497,9 +497,8 @@ a {
 /* The spinning symbol inside the icon box */
 .skill-symbol {
   display: inline-block;
-  animation: spinYAxis 4s linear infinite;
+  animation: spinYAxis 2s linear infinite; /* Changed 4s to 2s to double the speed */
 }
-
 /* Stop spin on hover */
 .skill-card:hover .skill-symbol {
   animation-play-state: paused;
@@ -517,7 +516,7 @@ a {
 }
 
 /* =========================================
-   EXPERIENCE
+  EXPERIENCE
    ========================================= */
 .experience-card { 
   display: grid; 
